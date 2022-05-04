@@ -2,7 +2,8 @@
   "name": "monorepo",
   "version": "1.0.0",
   "scripts": {
-    "release": "wireit"
+    "release": "wireit",
+    "postinstall": "patch-package"
   },
   "wireit": {
     "release": {
@@ -15,6 +16,7 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "patch-package": "^6.4.7",
     "release-it": "^15.0.0",
     "wireit": "^0.3.1"
   }
