@@ -1,0 +1,21 @@
+{
+  "name": "monorepo",
+  "version": "1.0.0",
+  "scripts": {
+    "release": "wireit"
+  },
+  "wireit": {
+    "release": {
+      "dependencies": [
+        "./packages/bravo:release",
+        "./packages/mol:release",
+        "./packages/zen:release"
+      ]
+    }
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "release-it": "^15.0.0",
+    "wireit": "^0.3.1"
+  }
+}
