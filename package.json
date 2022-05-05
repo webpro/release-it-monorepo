@@ -7,7 +7,7 @@
   },
   "wireit": {
     "release": {
-      "command": "release-it --no-npm",
+      "command": "release-it --no-npm --no-git.requireCleanWorkingDir",
       "dependencies": [
         "./packages/bravo:release",
         "./packages/mol:release",

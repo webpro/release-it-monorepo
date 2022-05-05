@@ -2,7 +2,7 @@
   "name": "bravo",
   "version": "1.0.0",
   "scripts": {
-    "release": "release-it --npm.skipChecks"
+    "release": "release-it --npm.skipChecks --no-git.requireCleanWorkingDir"
   },
   "release-it": {
     "git": {
