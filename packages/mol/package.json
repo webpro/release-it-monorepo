@@ -1,6 +1,6 @@
 {
   "name": "mol",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "release": "release-it --npm.skipChecks --no-git.requireCleanWorkingDir"
   },
