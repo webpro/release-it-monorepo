@@ -8,5 +8,5 @@ WIREIT_PARALLEL=1 npm run release
 ```
 
 Note that this currently uses a patched version of wireit to spawn the child
-process using `stdio: 'inherit'`. Also, `WIREIT_PARALLEL=1` is required to run
-the release-it processes in sequence.
+process using `stdio: ['inherit', 'pipe', 'pipe']`. Also, `WIREIT_PARALLEL=1` is
+required to run the release-it processes in sequence.
