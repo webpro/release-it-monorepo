@@ -2,6 +2,13 @@
   "name": "bravo",
   "version": "1.0.0",
   "scripts": {
-    "release": "release-it --npm.skipChecks --no-git"
+    "release": "release-it --npm.skipChecks"
+  },
+  "release-it": {
+    "git": {
+      "commit": false,
+      "tag": false,
+      "push": false
+    }
   }
 }
