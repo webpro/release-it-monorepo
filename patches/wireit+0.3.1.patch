@@ -1,30 +1,12 @@
 diff --git a/node_modules/wireit/lib/executor.js b/node_modules/wireit/lib/executor.js
-index a5535fd..37f0fa7 100644
+index a5535fd..2030ae1 100644
 --- a/node_modules/wireit/lib/executor.js
 +++ b/node_modules/wireit/lib/executor.js
 @@ -262,6 +262,7 @@ _ScriptExecution_script = new WeakMap(), _ScriptExecution_executor = new WeakMap
              //   https://nodejs.org/api/child_process.html#default-windows-shell
              //   https://github.com/npm/run-script/blob/a5b03bdfc3a499bf7587d7414d5ea712888bfe93/lib/make-spawn-args.js#L11
              shell: true,
-+            stdio: 'inherit',
++            stdio: ['inherit', 'pipe', 'pipe'],
              env: augmentProcessEnvSafelyIfOnWindows({
                  PATH: __classPrivateFieldGet(this, _ScriptExecution_instances, "a", _ScriptExecution_pathEnvironmentVariable_get),
              }),
-@@ -270,7 +271,7 @@ _ScriptExecution_script = new WeakMap(), _ScriptExecution_executor = new WeakMap
-         // this streams.
-         let stdoutReplay;
-         let stderrReplay;
--        child.stdout.on('data', (data) => {
-+        child.stdout && child.stdout.on('data', (data) => {
-             __classPrivateFieldGet(this, _ScriptExecution_logger, "f").log({
-                 script: __classPrivateFieldGet(this, _ScriptExecution_script, "f"),
-                 type: 'output',
-@@ -282,7 +283,7 @@ _ScriptExecution_script = new WeakMap(), _ScriptExecution_executor = new WeakMap
-             }
-             stdoutReplay.write(data);
-         });
--        child.stderr.on('data', (data) => {
-+        child.stderr && child.stderr.on('data', (data) => {
-             __classPrivateFieldGet(this, _ScriptExecution_logger, "f").log({
-                 script: __classPrivateFieldGet(this, _ScriptExecution_script, "f"),
-                 type: 'output',
