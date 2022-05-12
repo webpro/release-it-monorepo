@@ -1,0 +1,12 @@
+diff --git a/node_modules/wireit/lib/script-child-process.js b/node_modules/wireit/lib/script-child-process.js
+index 419e18a..273c1b8 100644
+--- a/node_modules/wireit/lib/script-child-process.js
++++ b/node_modules/wireit/lib/script-child-process.js
+@@ -68,6 +68,7 @@ export class ScriptChildProcess {
+             //   https://nodejs.org/api/child_process.html#default-windows-shell
+             //   https://github.com/npm/run-script/blob/a5b03bdfc3a499bf7587d7414d5ea712888bfe93/lib/make-spawn-args.js#L11
+             shell: true,
++            stdio: ['inherit', 'pipe', 'pipe'],
+             env: augmentProcessEnvSafelyIfOnWindows({
+                 PATH: __classPrivateFieldGet(this, _ScriptChildProcess_instances, "a", _ScriptChildProcess_pathEnvironmentVariable_get),
+             }),
